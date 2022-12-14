@@ -1,0 +1,30 @@
+.profile_main_section {
+    min-height: 80vh;
+    width:100%;
+    background-image: url("https://images.unsplash.com/photo-1494859802809-d069c3b71a8a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80 ");
+    background-size: cover;
+}
+
+.profile_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.profile_container * {
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+}
+
+.profile_container img {
+    height: 25rem !important;
+    width: 25rem;
+    padding: 1rem;
+    border-radius: 50%;
+}
+
+.profile_container h2 {
+    margin-bottom: 2rem;
+}

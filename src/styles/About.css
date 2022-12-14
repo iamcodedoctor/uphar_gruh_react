@@ -1,0 +1,16 @@
+.about_div {
+    height: auto;
+    width: auto;
+    background-image: url("https://images.unsplash.com/photo-1533628635777-112b2239b1c7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.person_photo {
+    height: 25rem !important;
+    width: 25rem;
+    padding: 1rem;
+    border-radius: 50%;
+}

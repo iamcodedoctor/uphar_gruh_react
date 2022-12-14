@@ -1,0 +1,20 @@
+.contact_section {
+    min-height: 80vh;
+    width: 100%;
+    background-image: url("https://images.unsplash.com/photo-1494859802809-d069c3b71a8a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80 ");
+    background-size: cover;
+}
+
+.form_container {
+    max-width: 680px;
+    padding: 2rem 1rem;
+}
+
+.form_heading {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form_submit_button {
+    width: 100%;
+}

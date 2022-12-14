@@ -1,0 +1,60 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* border-top : 1px solid lightgray; */
+}
+
+.links_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+
+}
+
+@media screen and (max-width: 680px ) {
+    .links_div {
+        flex-direction: column;
+    }
+}
+
+.links_div a {
+    text-decoration: none;
+    color: rgb(37, 37, 37);
+    margin: 0 2rem;
+    font-size: 1.2rem;
+}
+
+.social_media {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social_media a {
+    text-decoration: none;
+    color: rgb(37, 37, 37);
+    margin: 0 2rem;
+    font-size: 2rem;
+}
+
+.heading_div {
+    margin-top: 1.5rem;
+}
+
+.heading_div h3 {
+    font-size: 3rem;
+
+}
+
+.copyright_div {
+    margin-top: 1.5rem;
+
+}
+
+.founder_name {
+    width: 100%;
+}
