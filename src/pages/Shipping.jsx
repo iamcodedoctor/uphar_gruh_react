@@ -2,14 +2,9 @@ import React from "react";
 import "../styles/Shipping.css";
 import { Button, Container, Form } from "react-bootstrap";
 
-
 const Shipping = () => {
-
-    
-
     const handleSubmit = (e) => {
         e.preventDefault();
-        
     };
 
     return (
@@ -21,7 +16,6 @@ const Shipping = () => {
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>House Number</Form.Label>
                             <Form.Control
-                               
                                 type="number"
                                 placeholder="Enter House Number"
                             />

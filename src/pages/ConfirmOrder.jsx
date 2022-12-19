@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/Shipping.css";
-import { Button, Container, Form } from "react-bootstrap";
+import {Button, Container, Form} from "react-bootstrap";
 
 const ConfirmOrder = () => {
     const handleSubmit = (e) => {

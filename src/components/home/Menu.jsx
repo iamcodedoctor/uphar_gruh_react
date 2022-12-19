@@ -10,7 +10,7 @@ const Menu = () => {
         console.log("addToCart function called");
     };
     return (
-        
+
         <Container id="menu">
             <h1 className="menu_heading">Menu</h1>
 

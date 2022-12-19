@@ -1,5 +1,5 @@
 import React from "react";
-import { Spinner } from "react-bootstrap";
+import {Spinner} from "react-bootstrap";
 
 const Loader = () => {
     return (
@@ -13,7 +13,7 @@ const Loader = () => {
             }}
         >
             <Spinner
-                style={{ height: "8rem", width: "8rem" }}
+                style={{height: "8rem", width: "8rem"}}
                 animation="border"
                 variant="dark"
             />

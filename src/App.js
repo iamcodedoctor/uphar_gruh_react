@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Home from "./pages/Home";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Layout/Header";
@@ -22,25 +22,25 @@ import NotFound from "./pages/NotFound";
 function App() {
     return (
         <Router>
-            <Header />
+            <Header/>
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/cart" element={<Cart />} />
-                <Route path="/shipping" element={<Shipping />} />
-                <Route path="/confirmOrder" element={<ConfirmOrder />} />
-                <Route path="/paymentSuccess" element={<PaymentSuccess />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/profile" element={<Profile />} />
-                <Route path="/myOrders" element={<MyOrders />} />
-                <Route path="/orderDetails/:id" element={<OrderDetails />} />
-                <Route path="/about" element={<About />} />
-                <Route path='/admin/dashboard' element={<Dashboard />} />
-                <Route path='/admin/users' element={<Users />} />
-                <Route path='/admin/orders' element={<Orders />} />
-                <Route path='*' element={<NotFound />} />
+                <Route path="/" element={<Home/>}/>
+                <Route path="/contact" element={<Contact/>}/>
+                <Route path="/cart" element={<Cart/>}/>
+                <Route path="/shipping" element={<Shipping/>}/>
+                <Route path="/confirmOrder" element={<ConfirmOrder/>}/>
+                <Route path="/paymentSuccess" element={<PaymentSuccess/>}/>
+                <Route path="/login" element={<Login/>}/>
+                <Route path="/profile" element={<Profile/>}/>
+                <Route path="/myOrders" element={<MyOrders/>}/>
+                <Route path="/orderDetails/:id" element={<OrderDetails/>}/>
+                <Route path="/about" element={<About/>}/>
+                <Route path='/admin/dashboard' element={<Dashboard/>}/>
+                <Route path='/admin/users' element={<Users/>}/>
+                <Route path='/admin/orders' element={<Orders/>}/>
+                <Route path='*' element={<NotFound/>}/>
             </Routes>
-            <Footer />
+            <Footer/>
         </Router>
     );
 }

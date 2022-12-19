@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Container } from "react-bootstrap";
+import {Button, Container} from "react-bootstrap";
 import "../styles/NotFound.css"
 import {Link} from "react-router-dom"
 
@@ -13,7 +13,7 @@ const NotFound = () => {
                     Page Not Found, Click below to navigate back to home page
                 </h5>
                 <Link to="/">
-                <Button variant="danger">Home Page</Button>
+                    <Button variant="danger">Home Page</Button>
                 </Link>
             </Container>
         </section>

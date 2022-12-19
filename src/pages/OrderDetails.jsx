@@ -1,12 +1,12 @@
 import React from "react";
-import { Card, Container } from "react-bootstrap";
+import {Card, Container} from "react-bootstrap";
 import "../styles/OrderDetails.css"
 
 const OrderDetails = () => {
     return (
         <section className="main_section">
             <Container className="py-4">
-                
+
                 <Card className="text-center">
                     <Card.Header>
                         <h2>Order Details</h2>

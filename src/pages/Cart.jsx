@@ -72,11 +72,11 @@ const Cart = () => {
                                     </div>
                                     <div className={'checkout_button_div'}>
 
-                                    <Link to={"/shipping"}>
-                                        <Button variant="danger">
-                                            Checkout
-                                        </Button>
-                                    </Link>
+                                        <Link to={"/shipping"}>
+                                            <Button variant="danger">
+                                                Checkout
+                                            </Button>
+                                        </Link>
                                     </div>
                                 </Card.Body>
                             </Card>

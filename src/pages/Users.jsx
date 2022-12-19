@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Table } from "react-bootstrap";
+import {Container, Table} from "react-bootstrap";
 import "../styles/Table.css";
 
 const Users = () => {
@@ -15,42 +15,45 @@ const Users = () => {
                     size="sm"
                 >
                     <thead>
-                        <tr>
-                            <th>User Id</th>
-                            <th>Name</th>
-                            <th>Role</th>
-                            <th>Since</th>
-                        </tr>
+                    <tr>
+                        <th>User Id</th>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th>Since</th>
+                    </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>j23asd23kl1j23</td>
-                            <td>James Gordan</td>
-                            <td>Admin</td>
-                            <td>2021-04-12</td>
-                        </tr>
-                        {/* This is a seperator */}
-                        <tr>
-                            <td>j23asd23kl1j23</td>
-                            <td>James Gordan</td>
-                            <td>Admin</td>
-                            <td>2021-04-12</td>
-                        </tr><tr>
-                            <td>j23asd23kl1j23</td>
-                            <td>James Gordan</td>
-                            <td>Admin</td>
-                            <td>2021-04-12</td>
-                        </tr><tr>
-                            <td>j23asd23kl1j23</td>
-                            <td>James Gordan</td>
-                            <td>Admin</td>
-                            <td>2021-04-12</td>
-                        </tr><tr>
-                            <td>j23asd23kl1j23</td>
-                            <td>James Gordan</td>
-                            <td>Admin</td>
-                            <td>2021-04-12</td>
-                        </tr>
+                    <tr>
+                        <td>j23asd23kl1j23</td>
+                        <td>James Gordan</td>
+                        <td>Admin</td>
+                        <td>2021-04-12</td>
+                    </tr>
+                    {/* This is a seperator */}
+                    <tr>
+                        <td>j23asd23kl1j23</td>
+                        <td>James Gordan</td>
+                        <td>Admin</td>
+                        <td>2021-04-12</td>
+                    </tr>
+                    <tr>
+                        <td>j23asd23kl1j23</td>
+                        <td>James Gordan</td>
+                        <td>Admin</td>
+                        <td>2021-04-12</td>
+                    </tr>
+                    <tr>
+                        <td>j23asd23kl1j23</td>
+                        <td>James Gordan</td>
+                        <td>Admin</td>
+                        <td>2021-04-12</td>
+                    </tr>
+                    <tr>
+                        <td>j23asd23kl1j23</td>
+                        <td>James Gordan</td>
+                        <td>Admin</td>
+                        <td>2021-04-12</td>
+                    </tr>
                     </tbody>
                 </Table>
             </Container>

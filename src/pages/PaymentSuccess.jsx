@@ -1,7 +1,7 @@
 import React from "react";
-import { Button, Container } from "react-bootstrap";
+import {Button, Container} from "react-bootstrap";
 import "../styles/Shipping.css";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const PaymentSuccess = () => {
     return (
@@ -13,7 +13,7 @@ const PaymentSuccess = () => {
                     your order Status.
                 </h6>
                 <Button className="my-2" variant="danger">
-                    <Link style={{color:"white"}} to="/myOredrs">Check Status</Link>
+                    <Link style={{color: "white"}} to="/myOredrs">Check Status</Link>
                 </Button>
             </Container>
         </section>

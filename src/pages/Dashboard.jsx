@@ -1,15 +1,15 @@
 import React from "react";
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import {Button, Card, Col, Container, Row} from "react-bootstrap";
 import Loader from "../components/Loading/Loader.jsx";
 import "../styles/Dashboard.css";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const Dashboard = () => {
     const laoding = false;
     return (
         <section className="section_main">
             {laoding ? (
-                <Loader />
+                <Loader/>
             ) : (
                 <Container className="dashboard_container">
                     <Row className="cards_row">
@@ -17,7 +17,7 @@ const Dashboard = () => {
                             <Card
                                 bg="dark"
                                 text="light"
-                                style={{ width: "10rem", height: "10rem" }}
+                                style={{width: "10rem", height: "10rem"}}
                                 className="mb-2 special_card"
                             >
                                 <Card.Body className="dashboard_card_body">
@@ -30,7 +30,7 @@ const Dashboard = () => {
                             <Card
                                 bg="dark"
                                 text="light"
-                                style={{ width: "10rem", height: "10rem" }}
+                                style={{width: "10rem", height: "10rem"}}
                                 className="mb-2 special_card"
                             >
                                 <Card.Body className="dashboard_card_body">
@@ -43,7 +43,7 @@ const Dashboard = () => {
                             <Card
                                 bg="dark"
                                 text="light"
-                                style={{ width: "10rem", height: "10rem" }}
+                                style={{width: "10rem", height: "10rem"}}
                                 className="mb-2 special_card"
                             >
                                 <Card.Body className="dashboard_card_body">
@@ -57,7 +57,7 @@ const Dashboard = () => {
                         <div className="buttons-col">
                             <Link to="/admin/orders">
                                 <Button
-                                    style={{ width: "10rem" }}
+                                    style={{width: "10rem"}}
                                     variant="dark"
                                 >
                                     View Orders
@@ -65,7 +65,7 @@ const Dashboard = () => {
                             </Link>
                             <Link to="/admin/users">
                                 <Button
-                                    style={{ width: "10rem" }}
+                                    style={{width: "10rem"}}
                                     variant="dark"
                                 >
                                     View Users

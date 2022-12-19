@@ -51,8 +51,19 @@ const GridTest = () => {
                 <Row>
                     {data.map((d) => {
                         return (
-                            <Col xs={12} md={6} lg={4} style={{display: "flex", justifyContent: "center"}}>
-                                <Card className="my-4" style={{width: "18rem"}}>
+                            <Col
+                                xs={12}
+                                md={6}
+                                lg={4}
+                                style={{
+                                    display: "flex",
+                                    justifyContent: "center",
+                                }}
+                            >
+                                <Card
+                                    className="my-4"
+                                    style={{ width: "18rem" }}
+                                >
                                     <Card.Img
                                         variant="top"
                                         src="https://images.unsplash.com/photo-1630423029172-fd5e39ae6dfb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
@@ -68,9 +79,7 @@ const GridTest = () => {
                             </Col>
                         );
                     })}
-
                 </Row>
-
             </Container>
         </>
     );

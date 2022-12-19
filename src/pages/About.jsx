@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Container, Image, Row } from "react-bootstrap";
+import {Col, Container, Image, Row} from "react-bootstrap";
 import "../styles/About.css";
 
 const About = () => {
@@ -44,7 +44,7 @@ const About = () => {
                     </Col>
                 </Row>
                 <Row>
-                   
+
                     <Col sm={12} lg={8} className="text_col">
                         <h2 className="founder_name">
                             Simmy Dicosta (Founder)
