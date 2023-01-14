@@ -6,7 +6,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
-const Header = ({ isAuthenticated = false }) => {
+const Header = ({ isAuthenticated }) => {
     return (
         <>
             {["sm"].map((expand) => (
@@ -47,7 +47,7 @@ const Header = ({ isAuthenticated = false }) => {
                                         <MdShoppingCart />
                                     </Link>
                                     {isAuthenticated ? (
-                                        <Link className="nav-link" to="/me">
+                                        <Link className="nav-link" to="/profile">
                                             <MdPerson />
                                         </Link>
                                     ) : (

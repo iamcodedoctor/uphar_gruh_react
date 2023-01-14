@@ -1,11 +1,13 @@
 import React from "react";
 import "../styles/Shipping.css";
 import { Button, Container, Form } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const Shipping = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
     };
+    const navigate = useNavigate()
 
     return (
         <section className={"shipping"}>

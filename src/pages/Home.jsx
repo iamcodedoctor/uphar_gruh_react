@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {Button, Container} from "react-bootstrap";
 import Carousel from "react-bootstrap/Carousel";
 
 import "../styles/Home.css";
 import Founder from "../components/home/Founder";
 import Menu from "../components/home/Menu";
+import { fetchMenuItems } from "../Services/itemService";
 
 const Home = () => {
+
+    const [menuItems, setMenuItems] = useState();
+
+    useEffect(()=> {
+        const getMenuItems = async () => {
+            const response = await fetchMenuItems();
+            console.log(response);
+            setMenuItems(response.data);
+        }
+        getMenuItems();
+    }, [])
+
     return (
         <section className="home_main_section">
             <Carousel id="home">
@@ -58,12 +71,12 @@ const Home = () => {
                 <h1>Food Plaza...!</h1>
                 <h4>Enjoy Authentic and tastey dishes.</h4>
                 <h6>Click below for menu.</h6>
-                <a href="#menu">
+                <a href="#menu" style={{scrollBehavior:'smooth'}}>
                     <Button variant="danger">Menu</Button>
                 </a>
             </Container>
             <Founder/>
-            <Menu/>
+            <Menu menuItems={menuItems}/>
         </section>
     );
 };
