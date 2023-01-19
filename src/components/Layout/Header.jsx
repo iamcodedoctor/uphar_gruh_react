@@ -6,8 +6,10 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Badge from 'react-bootstrap/Badge';
+import { useSelector } from "react-redux";
 
 const Header = ({ isAuthenticated }) => {
+    const {dishes} = useSelector((state) => state.cart);
     return (
         <>
             {["sm"].map((expand) => (
@@ -45,7 +47,7 @@ const Header = ({ isAuthenticated }) => {
                                         About
                                     </Link>
                                     <Link style={{position:'relative', width:'45px'}} className="nav-link" to="/cart">
-                                        <MdShoppingCart style={{fontSize:'1.2rem'}} /> <Badge style={{position:'absolute', top:'0px', right:'0px'}} bg="danger">9</Badge>
+                                        <MdShoppingCart style={{fontSize:'1.2rem'}} /> <Badge style={{position:'absolute', top:'0px', right:'0px'}} bg="danger">{dishes.length}</Badge>
                                     </Link>
                                     {isAuthenticated ? (
                                         <Link className="nav-link" to="/profile">

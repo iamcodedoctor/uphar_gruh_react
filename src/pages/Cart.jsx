@@ -2,13 +2,18 @@ import React from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import CartItem from "../components/cart/CartItem";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { decrementItemQuantity, incrementItemQuantity } from "../redux/reducers/cartReducer";
 
 const Cart = () => {
     const { dishes } = useSelector((state) => state.cart);
-    const increment = (item) => {};
-
-    const decrement = (item) => {};
+    const dispatch = useDispatch();
+    const increment = (id) => {
+        dispatch(incrementItemQuantity(id))
+    }
+    const decrement = (id) => {
+        dispatch(decrementItemQuantity(id))
+    }
 
     return (
         <section>
@@ -16,19 +21,21 @@ const Cart = () => {
                 <Container className="cart_container">
                     <Row className="py-4">
                         <Col className="cart_items_column" sm={12} lg={8}>
-                            {!dishes.length ? (
+                            {!dishes?.length ? (
                                 <h1>No Items in cart</h1>
                             ) : (
                                 dishes.map((dish) => {
                                     return (
                                         <CartItem
+                                            key={dish._id}
+                                            id={dish._id}
                                             value={dish.quantity}
                                             title={dish.title}
                                             dishImage={
                                                 "https://images.unsplash.com/photo-1602881917445-0b1ba001addf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
                                             }
-                                            increment={increment(1)}
-                                            decrement={decrement(1)}
+                                            increment={() => increment(dish._id)}
+                                            decrement={() => decrement(dish._id)}
                                         />
                                     );
                                 })

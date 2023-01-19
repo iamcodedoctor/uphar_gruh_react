@@ -27,7 +27,7 @@ import storage from 'redux-persist/lib/storage'
 
 
 import { authReducer } from './reducers/userReducer';
-import { cartReducer } from './reducers/cartReducer';
+import  cartReducer  from './reducers/cartReducer';
 
 const persistUserConfig = {
   key: 'auth',

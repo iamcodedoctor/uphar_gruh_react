@@ -5,10 +5,12 @@ import MenuCard from "./MenuCard";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../../redux/actions/cartActions";
+import { addToCart } from "../../redux/reducers/cartReducer";
+
 
 const Menu = ({ menuItems }) => {
     const dispatch = useDispatch()
+   
     const handleAddToCart = (item) => {
         dispatch(addToCart(item))
     };
