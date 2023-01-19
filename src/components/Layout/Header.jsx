@@ -5,12 +5,13 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import Badge from 'react-bootstrap/Badge';
 
 const Header = ({ isAuthenticated }) => {
     return (
         <>
             {["sm"].map((expand) => (
-                <Navbar key={expand} bg="light" expand={expand}>
+                <Navbar sticky="top" key={expand} bg="light" expand={expand}>
                     <Container fluid>
                         <Navbar.Brand>
                             <Link className="nav-link" to="/">
@@ -43,16 +44,16 @@ const Header = ({ isAuthenticated }) => {
                                     <Link className="nav-link" to="/about">
                                         About
                                     </Link>
-                                    <Link className="nav-link" to="/cart">
-                                        <MdShoppingCart />
+                                    <Link style={{position:'relative', width:'45px'}} className="nav-link" to="/cart">
+                                        <MdShoppingCart style={{fontSize:'1.2rem'}} /> <Badge style={{position:'absolute', top:'0px', right:'0px'}} bg="danger">9</Badge>
                                     </Link>
                                     {isAuthenticated ? (
                                         <Link className="nav-link" to="/profile">
-                                            <MdPerson />
+                                            <MdPerson style={{fontSize:'1.2rem'}} />
                                         </Link>
                                     ) : (
                                         <Link className="nav-link" to="/login">
-                                            <MdLogin />
+                                            <MdLogin style={{fontSize:'1.2rem'}} />
                                         </Link>
                                     )}
                                 </Nav>

@@ -64,7 +64,7 @@ function App() {
                     element={
                         <ProtectedRoute
                             isAuthenticated={!isAuthenticated}
-                            redirect={"/me"}
+                            redirect={"/profile"}
                         >
                             <Login />
                         </ProtectedRoute>
@@ -96,7 +96,7 @@ function App() {
                             isAuthenticated={isAuthenticated}
                             adminRoute={true}
                             isAdmin={user && user.role === "admin"}
-                            redirect={"/me"}
+                            redirect={"/profile"}
                         />
                     }
                 >

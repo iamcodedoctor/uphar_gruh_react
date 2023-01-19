@@ -95,7 +95,7 @@ const MyOrders = () => {
                         <td>₹{120}</td>
                         <td>COD</td>
                         <td>
-                            <Link to="/orderDetail/12">
+                            <Link to="/orderDetails/12">
                                 <Button variant="danger">Details</Button>
                             </Link>
                         </td>
