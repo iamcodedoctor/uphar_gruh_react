@@ -4,10 +4,13 @@ import "../../styles/Menu.css";
 import MenuCard from "./MenuCard";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/actions/cartActions";
 
 const Menu = ({ menuItems }) => {
-    const addToCart = () => {
-        console.log("addToCart function called");
+    const dispatch = useDispatch()
+    const handleAddToCart = (item) => {
+        dispatch(addToCart(item))
     };
 
     return (
@@ -24,7 +27,7 @@ const Menu = ({ menuItems }) => {
                                 dishImage={
                                     "https://images.unsplash.com/photo-1602881917445-0b1ba001addf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
                                 }
-                                handler={addToCart}
+                                handler={() => handleAddToCart(item)}
                             />
                         </Col>
                     );

@@ -14,7 +14,7 @@ const Home = () => {
     useEffect(()=> {
         const getMenuItems = async () => {
             const response = await fetchMenuItems();
-            console.log(response);
+            // console.log(response);
             setMenuItems(response.data);
         }
         getMenuItems();
