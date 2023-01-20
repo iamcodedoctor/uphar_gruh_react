@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import CartItem from "../components/cart/CartItem";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { decrementItemQuantity, incrementItemQuantity } from "../redux/reducers/cartReducer";
+import { decrementItemQuantity, getCartTotal, incrementItemQuantity } from "../redux/reducers/cartReducer";
 
 const Cart = () => {
-    const { dishes } = useSelector((state) => state.cart);
+    const { dishes, total } = useSelector((state) => state.cart);
     const dispatch = useDispatch();
     const increment = (id) => {
         dispatch(incrementItemQuantity(id))
@@ -14,6 +14,10 @@ const Cart = () => {
     const decrement = (id) => {
         dispatch(decrementItemQuantity(id))
     }
+
+    useEffect(()=> {
+        dispatch(getCartTotal());
+    }, [dishes])
 
     return (
         <section>
@@ -27,6 +31,7 @@ const Cart = () => {
                                 dishes.map((dish) => {
                                     return (
                                         <CartItem
+                                        price={dish.price}
                                             key={dish._id}
                                             id={dish._id}
                                             value={dish.quantity}
@@ -51,19 +56,15 @@ const Cart = () => {
                                         <article>
                                             <div>
                                                 <p>Subtotal</p>
-                                                <h5>$ 200</h5>
-                                            </div>
-                                            <div>
-                                                <p>Tax</p>
-                                                <h5>$ 36</h5>
+                                                <h5>₹ {total.subTotal}</h5>
                                             </div>
                                             <div>
                                                 <p>Delivery Charges</p>
-                                                <h5>$ 50</h5>
+                                                <h5>₹ {total.delivery}</h5>
                                             </div>
                                             <div>
                                                 <h4>Total</h4>
-                                                <h4>$ {200 + 36 + 50}</h4>
+                                                <h4>₹ {total.finalTotal}</h4>
                                             </div>
                                         </article>
                                     </div>

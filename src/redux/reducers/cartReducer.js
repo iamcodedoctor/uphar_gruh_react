@@ -4,8 +4,8 @@ const initialState = {
     dishes: [],
     total: {
         subTotal: 0,
-        tax: 0,
-        total: 0,
+        delivery: 0,
+        finalTotal: 0,
     },
 };
 
@@ -36,6 +36,18 @@ export const cartSlice = createSlice({
         decrementItemQuantity: (state, action) => {
             state.dishes.find(dish => dish._id === action.payload).quantity -= 1;
         },
+        getCartTotal: (state) => {
+            const dishes = state.dishes;
+            let subTotal = 0;
+            if (dishes.length > 0) {
+                dishes.map(
+                    (item) => (subTotal += item.price * item.quantity)
+                );
+            }
+            const delivery = 50;
+            const finalTotal = subTotal + delivery;
+            state.total = {subTotal, delivery, finalTotal}
+        },
     },
 });
 
@@ -45,6 +57,7 @@ export const {
     removeItemFromCart,
     incrementItemQuantity,
     decrementItemQuantity,
+    getCartTotal
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

@@ -18,14 +18,14 @@
 }
 
 .card_image {
-    height: 120px !important;
-    width: 120px !important;
+    height: 80px !important;
+    width: 80px !important;
 }
 
 .card_body {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     
 }
 
@@ -67,4 +67,11 @@
 
 .totals_card_title {
     margin-bottom: 2rem;
+}
+
+@media screen and (min-width:480px) {
+    .card_image {
+        height: 120px !important;
+        width: 120px !important;
+    }
 }
