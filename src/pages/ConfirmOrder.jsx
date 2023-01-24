@@ -1,8 +1,9 @@
 import React from "react";
 import "../styles/Shipping.css";
-import {Button, Container, Form} from "react-bootstrap";
+import { Button, Container, Form } from "react-bootstrap";
 
 const ConfirmOrder = () => {
+    
     const handleSubmit = (e) => {
         e.preventDefault();
     };
@@ -20,12 +21,14 @@ const ConfirmOrder = () => {
                                 type="radio"
                                 label="Cash On Delivery"
                                 id="default-radio"
+                                value="COD"
                             />
                             <Form.Check
                                 name="paymentMethod"
                                 type="radio"
                                 label="Online"
                                 id="default-radio"
+                                value="Online"
                             />
                         </Form.Group>
 

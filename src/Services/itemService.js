@@ -1,6 +1,7 @@
 import axios from "axios"
+import baseConfig from "../configs/baseConfig";
 
-const serverUrl = "http://localhost:3010/api/v1"
+const serverUrl = baseConfig.serverUrl;
 
 export const fetchMenuItems = async () => {
     try {
