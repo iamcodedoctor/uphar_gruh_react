@@ -170,7 +170,7 @@ const Shipping = () => {
                             type="submit"
                             className="form_submit_button"
                         >
-                            Confirm Order
+                            Place Order
                         </Button>
                     </Form>
                 </Container>

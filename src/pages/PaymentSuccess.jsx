@@ -2,8 +2,15 @@ import React from "react";
 import {Button, Container} from "react-bootstrap";
 import "../styles/Shipping.css";
 import {Link} from "react-router-dom";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { resetCart } from "../redux/reducers/cartReducer";
 
 const PaymentSuccess = () => {
+    const dispatch = useDispatch();
+    useEffect(()=> {
+        dispatch(resetCart());
+    }, [])
     return (
         <section className={"shipping"}>
             <Container className={"shipping_container"}>

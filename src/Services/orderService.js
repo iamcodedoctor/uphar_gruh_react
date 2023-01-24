@@ -49,3 +49,12 @@ export const createOredr = async (data) => {
         return error;
     }
 }
+
+export const getMyOrders = async () => {
+    try {
+        const response = await axios.get(`${serverUrl}/order/myOrders`, {withCredentials: true});
+        return response.data;
+    } catch (error) {
+        return error;
+    }
+}
