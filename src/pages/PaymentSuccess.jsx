@@ -20,7 +20,7 @@ const PaymentSuccess = () => {
                     your order Status.
                 </h6>
                 <Button className="my-2" variant="danger">
-                    <Link style={{color: "white"}} to="/myOredrs">Check Status</Link>
+                    <Link style={{color: "white"}} to="/myOrders">Check Status</Link>
                 </Button>
             </Container>
         </section>

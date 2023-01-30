@@ -2,13 +2,17 @@ import React from "react";
 import { Button, Container, Table } from "react-bootstrap";
 import "../styles/Table.css";
 import "../styles/MyOrders.css";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { getMyOrders } from "../Services/orderService";
 import { useState } from "react";
 
 const MyOrders = () => {
     const [myOrders, setMyOrders] = useState();
+    const navigate = useNavigate();
+    const handleClick = (id) => {
+        navigate(`/orderDetails/${id}`)
+    }
     useEffect(() => {
         const fetchMyOrders = async () => {
             const response = await getMyOrders();
@@ -20,8 +24,10 @@ const MyOrders = () => {
         <section className="my_orders_section">
             <h2 className="py-4 text-center">My Orders</h2>
             <Container className="table_container">
-                {!myOrders.length ? (
-                    <h3 style={{textAlign:'center'}}>You have not placed any orders yet.</h3>
+                {!myOrders?.length ? (
+                    <h3 style={{ textAlign: "center" }}>
+                        You have not placed any orders yet.
+                    </h3>
                 ) : (
                     <Table
                         className="mb-4 main_table"
@@ -50,11 +56,12 @@ const MyOrders = () => {
                                         <td>₹{order.totalAmount / 100}</td>
                                         <td>{order.paymentMethod}</td>
                                         <td>
-                                            <Link to="/orderDetail/:id">
-                                                <Button variant="danger">
-                                                    Details
-                                                </Button>
-                                            </Link>
+                                            <Button
+                                                variant="danger"
+                                                onClick={() => handleClick(order._id)}
+                                            >
+                                                Details
+                                            </Button>
                                         </td>
                                     </tr>
                                 );

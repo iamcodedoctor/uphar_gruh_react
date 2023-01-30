@@ -23,6 +23,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { laodUser } from "./redux/actions/userActions";
 import toast, { Toaster } from "react-hot-toast";
 import { ProtectedRoute } from "protected-route-react";
+import PaymentFailure from "./pages/paymentFailure";
 
 function App() {
     const dispatch = useDispatch();
@@ -56,6 +57,8 @@ function App() {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/paymentSuccess" element={<PaymentSuccess />} />
+                <Route path="/paymentFailure" element={<PaymentFailure />} />
+
                 <Route path="/about" element={<About />} />
 
                 {/*User Protected Routes*/}

@@ -58,3 +58,12 @@ export const getMyOrders = async () => {
         return error;
     }
 }
+
+export const getOrderDetails = async (id) => {
+    try {
+        const response = await axios.get(`${serverUrl}/order/${id}`, {withCredentials: true});
+        return response.data;
+    } catch (error) {
+        return error;
+    }
+}
