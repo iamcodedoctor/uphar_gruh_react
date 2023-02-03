@@ -6,25 +6,29 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { getMyOrders } from "../Services/orderService";
 import { useState } from "react";
+import MyPagination from "../components/MyPagination";
 
 const MyOrders = () => {
     const [myOrders, setMyOrders] = useState();
+    const [page, setPage] = useState(1);
     const navigate = useNavigate();
     const handleClick = (id) => {
-        navigate(`/orderDetails/${id}`)
-    }
+        navigate(`/orderDetails/${id}`);
+    };
     useEffect(() => {
         const fetchMyOrders = async () => {
-            const response = await getMyOrders();
+            const response = await getMyOrders({ page: page - 1 });
             setMyOrders(response.data);
+            console.log(response.data);
         };
         fetchMyOrders();
-    }, []);
+    }, [page]);
+    const totalPages = Math.ceil(myOrders?.documentCount / 10);
     return (
         <section className="my_orders_section">
             <h2 className="py-4 text-center">My Orders</h2>
             <Container className="table_container">
-                {!myOrders?.length ? (
+                {!myOrders?.data?.length ? (
                     <h3 style={{ textAlign: "center" }}>
                         You have not placed any orders yet.
                     </h3>
@@ -47,7 +51,7 @@ const MyOrders = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {myOrders?.map((order) => {
+                            {myOrders?.data?.map((order) => {
                                 return (
                                     <tr key={order._id}>
                                         <td>{order._id}</td>
@@ -58,7 +62,9 @@ const MyOrders = () => {
                                         <td>
                                             <Button
                                                 variant="danger"
-                                                onClick={() => handleClick(order._id)}
+                                                onClick={() =>
+                                                    handleClick(order._id)
+                                                }
                                             >
                                                 Details
                                             </Button>
@@ -70,6 +76,11 @@ const MyOrders = () => {
                     </Table>
                 )}
             </Container>
+            <MyPagination
+                page={page}
+                setPage={setPage}
+                totalPages={totalPages}
+            />
         </section>
     );
 };

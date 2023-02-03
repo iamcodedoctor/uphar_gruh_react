@@ -1,8 +1,26 @@
 import React from "react";
-import {Container, Table} from "react-bootstrap";
+import { useEffect } from "react";
+import { useState } from "react";
+import { Container, Table } from "react-bootstrap";
+import MyPagination from "../components/MyPagination";
+import { getUsers } from "../Services/userService";
 import "../styles/Table.css";
 
 const Users = () => {
+    const [users, setUsers] = useState([]);
+    const [page, setPage] = useState(1);
+    const fetchUsers = async () => {
+        const response = await getUsers({ page: page - 1, limit: 10 });
+        setUsers(response.data);
+        console.log(response.data);
+    };
+
+    const totalPages = Math.ceil(users?.documentCount / 10);
+
+    useEffect(() => {
+        fetchUsers();
+    }, []);
+
     return (
         <section className="page_main_section">
             <h2 className="py-4 text-center">Users</h2>
@@ -15,48 +33,32 @@ const Users = () => {
                     size="sm"
                 >
                     <thead>
-                    <tr>
-                        <th>User Id</th>
-                        <th>Name</th>
-                        <th>Role</th>
-                        <th>Since</th>
-                    </tr>
+                        <tr>
+                            <th>User Id</th>
+                            <th>Name</th>
+                            <th>Role</th>
+                            <th>Since</th>
+                        </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>j23asd23kl1j23</td>
-                        <td>James Gordan</td>
-                        <td>Admin</td>
-                        <td>2021-04-12</td>
-                    </tr>
-                    {/* This is a seperator */}
-                    <tr>
-                        <td>j23asd23kl1j23</td>
-                        <td>James Gordan</td>
-                        <td>Admin</td>
-                        <td>2021-04-12</td>
-                    </tr>
-                    <tr>
-                        <td>j23asd23kl1j23</td>
-                        <td>James Gordan</td>
-                        <td>Admin</td>
-                        <td>2021-04-12</td>
-                    </tr>
-                    <tr>
-                        <td>j23asd23kl1j23</td>
-                        <td>James Gordan</td>
-                        <td>Admin</td>
-                        <td>2021-04-12</td>
-                    </tr>
-                    <tr>
-                        <td>j23asd23kl1j23</td>
-                        <td>James Gordan</td>
-                        <td>Admin</td>
-                        <td>2021-04-12</td>
-                    </tr>
+                        {users?.data?.map((user) => {
+                            return (
+                                <tr key={user._id}>
+                                    <td>{user._id}</td>
+                                    <td>{user.name}</td>
+                                    <td>{user.role}</td>
+                                    <td>{user.createdAt.slice(0, 10)}</td>
+                                </tr>
+                            );
+                        })}
                     </tbody>
                 </Table>
             </Container>
+            <MyPagination
+                page={page}
+                setPage={setPage}
+                totalPages={totalPages}
+            />
         </section>
     );
 };

@@ -13,7 +13,7 @@ const Profile = () => {
     const handleLogout = () => {
         dispatch(logOutUser());
     }
-    console.log(user);
+    
     return (
         <>
             {

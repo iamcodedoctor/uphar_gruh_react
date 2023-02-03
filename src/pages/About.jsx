@@ -1,5 +1,5 @@
 import React from "react";
-import {Col, Container, Image, Row} from "react-bootstrap";
+import { Col, Container, Image, Row } from "react-bootstrap";
 import "../styles/About.css";
 
 const About = () => {
@@ -47,13 +47,13 @@ const About = () => {
                     <Col sm={12} lg={4} className="photo_col">
                         <Image
                             className="person_photo"
-                            src="https://images.unsplash.com/photo-1506863530036-1efeddceb993?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1044&q=80"
+                            src="https://images.unsplash.com/photo-1618077360395-f3068be8e001?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
                             alt="Founder Image"
                         />
                     </Col>
                     <Col sm={12} lg={8} className="text_col">
                         <h2 className="founder_name">
-                            Simmy Dicosta (Founder)
+                            Rocky Smith (Head Chef)
                         </h2>
 
                         <p>
@@ -79,19 +79,18 @@ const About = () => {
                             nulla, dolores quis rerum!
                         </p>
                     </Col>
-
                 </Row>
                 <Row>
                     <Col sm={12} lg={4} className="photo_col">
                         <Image
                             className="person_photo"
-                            src="https://images.unsplash.com/photo-1506863530036-1efeddceb993?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1044&q=80"
+                            src="https://images.unsplash.com/photo-1534126416832-a88fdf2911c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
                             alt="Founder Image"
                         />
                     </Col>
                     <Col sm={12} lg={8} className="text_col">
                         <h2 className="founder_name">
-                            Simmy Dicosta (Founder)
+                            Rosy Milan (Manager)
                         </h2>
 
                         <p>
