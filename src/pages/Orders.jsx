@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { Button, Container, Table } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import { getAllOrders } from "../Services/orderService";
+import { getAllOrders, processOrder } from "../Services/orderService";
 import "../styles/Table.css";
 import MyPagination from "../components/MyPagination";
 
@@ -12,15 +12,35 @@ const Orders = () => {
     const navigate = useNavigate();
     const fetchOrders = async () => {
         try {
-            const response = await getAllOrders({ page: page -1, limit: 10 });
+            const response = await getAllOrders({ page: page - 1, limit: 10 });
             setOrders(response.data);
-            console.log(response.data)
         } catch (error) {
             console.log(error);
         }
     };
 
-    const totalPages = Math.ceil(orders?.documentCount/ 10);
+    const handleProcess = async (id) => {
+        try {
+            const response = await processOrder(id);
+            if (response.data.success === true) {
+                const newOrders = orders?.data?.map((order) => {
+                    if (order._id === id) {
+                        if (order.orderStatus === "Shipped") {
+                            order.orderStatus = "Delivered";
+                        } else if (order.orderStatus === "Preparing") {
+                            order.orderStatus = "Shipped";
+                        }
+                    }
+                    return order;
+                });
+                setOrders({ data: newOrders });
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const totalPages = Math.ceil(orders?.documentCount / 10);
 
     useEffect(() => {
         fetchOrders();
@@ -70,8 +90,17 @@ const Orders = () => {
                                         </Button>
 
                                         <Button
+                                            disabled={
+                                                order.orderStatus ===
+                                                "Delivered"
+                                                    ? true
+                                                    : false
+                                            }
                                             className="mx-2"
                                             variant="danger"
+                                            onClick={() =>
+                                                handleProcess(order._id)
+                                            }
                                         >
                                             Process
                                         </Button>

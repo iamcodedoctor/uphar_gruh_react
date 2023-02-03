@@ -64,13 +64,16 @@ export const createOredr = async (data) => {
     }
 };
 
-export const getMyOrders = async ({page, limit}) => {
+export const getMyOrders = async ({ page, limit }) => {
     try {
         page = page || 0;
         limit = limit || 10;
-        const response = await axios.get(`${serverUrl}/order/myOrders?page=${page}&limit=${limit}`, {
-            withCredentials: true,
-        });
+        const response = await axios.get(
+            `${serverUrl}/order/myOrders?page=${page}&limit=${limit}`,
+            {
+                withCredentials: true,
+            }
+        );
         return response.data;
     } catch (error) {
         return error;
@@ -92,10 +95,24 @@ export const getAllOrders = async ({ page, limit }) => {
     try {
         page = page || 0;
         limit = limit || 10;
-        const response = await axios.get(`${serverUrl}/admin/orders?page=${page}&limit=${limit}`, {
+        const response = await axios.get(
+            `${serverUrl}/admin/orders?page=${page}&limit=${limit}`,
+            {
+                withCredentials: true,
+            }
+        );
+        return response.data;
+    } catch (error) {
+        return error;
+    }
+};
+
+export const processOrder = async (id) => {
+    try {
+        const response = await axios.get(`${serverUrl}/admin/order/${id}`, {
             withCredentials: true,
         });
-        return response.data;
+        return response;
     } catch (error) {
         return error;
     }
