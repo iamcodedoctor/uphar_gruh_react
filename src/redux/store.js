@@ -1,16 +1,3 @@
-// import { configureStore } from "@reduxjs/toolkit";
-// import { cartReducer } from "./reducers/cartReducer";
-// import { authReducer } from "./reducers/userReducer";
-
-// export const store = configureStore({
-//     reducer: {
-//         auth: authReducer,
-//         cart: cartReducer,
-//     },
-// });
-
-
-
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import {
   persistStore,
@@ -56,4 +43,4 @@ export const store = configureStore({
 })
 
 export let persistor = persistStore(store)
-export const serverUrl = "http://localhost:3010/api/v1";
+export const serverUrl = "https://uphargruh.onrender.com/api/v1";
