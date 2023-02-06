@@ -24,6 +24,9 @@ import { laodUser } from "./redux/actions/userActions";
 import toast, { Toaster } from "react-hot-toast";
 import { ProtectedRoute } from "protected-route-react";
 import PaymentFailure from "./pages/paymentFailure";
+import MenuItems from "./pages/MenuItems";
+import CreateMenuItem from "./pages/CreateMenuItem";
+import EditMenuItem from "./pages/EditMenuItem";
 
 function App() {
     const dispatch = useDispatch();
@@ -106,6 +109,15 @@ function App() {
                     <Route path="/admin/dashboard" element={<Dashboard />} />
                     <Route path="/admin/users" element={<Users />} />
                     <Route path="/admin/orders" element={<Orders />} />
+                    <Route path="/admin/menuItems" element={<MenuItems />} />
+                    <Route
+                        path="/admin/createMenuItem"
+                        element={<CreateMenuItem />}
+                    />
+                    <Route
+                        path="/admin/editMenuItem/:id"
+                        element={<EditMenuItem />}
+                    />
                 </Route>
 
                 <Route path="*" element={<NotFound />} />

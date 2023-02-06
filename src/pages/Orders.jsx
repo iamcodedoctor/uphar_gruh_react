@@ -33,7 +33,7 @@ const Orders = () => {
                     }
                     return order;
                 });
-                setOrders({ data: newOrders });
+                setOrders({ ...orders , data: newOrders });
             }
         } catch (error) {
             console.log(error);

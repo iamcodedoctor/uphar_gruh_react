@@ -1,15 +1,20 @@
 import React, {useState} from "react";
 import {Button, Container} from "react-bootstrap";
 import Form from "react-bootstrap/Form";
+import { toast } from "react-hot-toast";
 import "../styles/Contact.css";
+import {useNavigate} from 'react-router-dom'
 
 const Contact = () => {
+    const navigate = useNavigate();
     const [data, setData] = useState({
         name: '', email: '', message: ''
     });
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(data);
+        // console.log(data);
+        toast.success("Thank You for response.:)")
+        navigate('/')
     };
 
     return (<div className="contact_section">

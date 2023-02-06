@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 
 const Dashboard = () => {
     const laoding = false;
+    
     return (
         <section className="section_main">
             {laoding ? (
@@ -69,6 +70,14 @@ const Dashboard = () => {
                                     variant="dark"
                                 >
                                     View Users
+                                </Button>
+                            </Link>
+                            <Link to="/admin/menuItems">
+                                <Button
+                                    style={{width: "10rem"}}
+                                    variant="dark"
+                                >
+                                    Edit Menu
                                 </Button>
                             </Link>
                         </div>
